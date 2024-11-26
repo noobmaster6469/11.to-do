@@ -1,6 +1,6 @@
 {
-  "homepage": "https://noobmaster6469.github.io/11.to-do",
-  "name": "11.to-do",
+  "homepage": "https://noobmaster6469.github.io/to-do",
+  "name": "to-do",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -10,7 +10,7 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "react": "^18.3.1",
