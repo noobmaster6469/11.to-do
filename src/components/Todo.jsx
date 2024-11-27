@@ -1,5 +1,8 @@
 import { useState, useEffect } from "react";
 import "../todo.css";
+import doneIcon from "../assets/done.svg";
+import editIcon from "../assets/edit.svg";
+import deleteIcon from "../assets/delete.svg";
 
 const Todo = () => {
   const [todo, setTodo] = useState("");
@@ -45,7 +48,7 @@ const Todo = () => {
         <div className="main h-[100%] w-full bg-[#3C3D37] px-4 py-4 rounded-xl">
           <div className="functionality flex gap-4">
             <input
-              className="p-2 outline-none w-1/3 rounded"
+              className="p-2 outline-none w-2/3 rounded"
               onKeyDown={(e) => {
                 if (e.key === "Enter") {
                   clickHandler();
@@ -74,16 +77,15 @@ const Todo = () => {
               return (
                 <div
                   key={index}
-                  className="list bg-slate-300 rounded-xl px-4 py-2 text-black flex items-center mt-4"
+                  className="list bg-slate-300 rounded-xl px-4 py-2 text-black flex justify-between items-center mt-4 pr-[10vw]"
                 >
-                  <h1 className="w-[50%]">
+                  <h1 className="w-[40vw] mr-2">
                     <span
                       className={`${
                         todo.isCompleted ? "line-through" : ""
-                      } text-xl font-semibold`}
+                      } text-xl font-semibold block w-100% break-words`}
                     >
-                      <span className="hidden">{index++}</span>
-                      {index}.{todo.text}
+                      {++index}.{todo.text}
                     </span>
                   </h1>
                   <div className="btns flex gap-8">
@@ -93,7 +95,10 @@ const Todo = () => {
                       }}
                       className="button-27"
                     >
-                      Done
+                      <span className="text">Done</span>
+                      <span className="icon">
+                        <img src={doneIcon} alt="Done Icon" />
+                      </span>
                     </button>
                     <button
                       onClick={() => {
@@ -101,7 +106,10 @@ const Todo = () => {
                       }}
                       className="button-27"
                     >
-                      Edit
+                      <span className="text">Edit</span>
+                      <span className="icon">
+                        <img src={editIcon} alt="Edit Icon" />
+                      </span>
                     </button>
                     <button
                       onClick={() => {
@@ -109,7 +117,10 @@ const Todo = () => {
                       }}
                       className="button-27"
                     >
-                      Delete
+                      <span className="text">Delete</span>
+                      <span className="icon">
+                        <img src={deleteIcon} alt="Delete Icon" />
+                      </span>
                     </button>
                   </div>
                 </div>
